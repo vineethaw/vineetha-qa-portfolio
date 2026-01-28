@@ -1,0 +1,159 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Github, Download, Mail, Linkedin, Star, PlayCircle } from "lucide-react";
+
+export default function VineethaPortfolio() {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* SEO */}
+      <head>
+        <title>Vineetha Wilson | Senior QA Automation Engineer Dubai</title>
+        <meta name="description" content="Senior QA Automation Engineer & QA Team Lead in Dubai. Netflix-style QA portfolio showcasing Playwright, Selenium, API Automation, CI/CD, and enterprise QA leadership." />
+        <meta name="keywords" content="Senior QA Automation Engineer Dubai, SDET Dubai, QA Lead UAE, Playwright Automation, Selenium QA" />
+      </head>
+
+      {/* Hero - Netflix Style */}
+      <section className="relative h-[70vh] bg-gradient-to-r from-black via-black/80 to-transparent">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475')] bg-cover bg-center opacity-40" />
+        <div className="relative max-w-7xl mx-auto px-6 py-24">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+            <h1 className="text-5xl font-extrabold mb-4">Vineetha Wilson</h1>
+            <p className="text-2xl mb-2">Senior QA Automation Engineer | QA Team Lead | SDET</p>
+            <p className="text-slate-300 mb-4">Playwright • Selenium • API Automation • CI/CD • Enterprise QA Leadership</p>
+            <p className="mb-6">Relocating to Dubai, UAE | Immediate / 30 Days Availability</p>
+            <div className="flex gap-4 flex-wrap">
+              <Button className="bg-red-600 hover:bg-red-700 rounded-xl"><PlayCircle className="mr-2" /> View Projects</Button>
+              <Button variant="outline" className="rounded-xl"><Download className="mr-2" /> Download CV</Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About - Series Description */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6">About the Engineer</h2>
+        <p className="text-slate-300 max-w-4xl">
+          Senior QA Automation Engineer and Team Lead with 6+ years of experience delivering enterprise-grade automation across Web, Mobile, API, and OTT platforms. Known for building scalable Playwright and Selenium frameworks, leading high-performing QA teams, and improving release confidence through CI/CD-driven quality gates. Award-winning performer with proven client impact.
+        </p>
+      </section>
+
+      {/* Tech Stack - Netflix Rows */}
+      <section className="space-y-12 px-6">
+        {[ 
+          { title: "Web Automation", items: ["Playwright", "Selenium", "WebDriverIO", "Cypress"] },
+          { title: "API & Services", items: ["REST Assured", "Postman", "ReadyAPI", "SoapUI", "Newman"] },
+          { title: "Frameworks", items: ["TestNG", "JUnit 5", "PyTest", "Cucumber", "Mocha", "Jest"] },
+          { title: "CI/CD & Cloud", items: ["Jenkins", "Azure DevOps", "GitHub Actions", "BrowserStack", "Selenium Grid"] },
+        ].map((row) => (
+          <div key={row.title} className="max-w-7xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4">{row.title}</h3>
+            <div className="flex gap-4 overflow-x-auto pb-4">
+              {row.items.map((item) => (
+                <div key={item} className="min-w-[200px] bg-slate-900 rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
+                  <p className="font-semibold">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Featured Projects - Netflix Originals */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold mb-10">Featured Automation Projects (Netflix Originals)</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[ 
+            {
+              title: "Playwright Enterprise E2E Platform",
+              desc: "Scalable Playwright + TypeScript framework with POM, Allure reporting, parallel execution, and CI/CD pipelines.",
+              metrics: "Reduced regression time by 55%",
+              link: "https://github.com/yourusername/playwright-e2e-framework",
+            },
+            {
+              title: "API Automation & Contract Testing",
+              desc: "REST Assured + Postman/Newman automation for microservices with CI validation.",
+              metrics: "Improved API defect detection by 40%",
+              link: "https://github.com/yourusername/api-automation-suite",
+            },
+            {
+              title: "OTT & Cross-Device Automation",
+              desc: "Automation for Android, iOS, Smart TV, Firestick, Apple TV ensuring consistent UX.",
+              metrics: "Cross-platform coverage across 10+ devices",
+              link: "https://github.com/yourusername/ott-automation",
+            },
+          ].map((p) => (
+            <Card key={p.title} className="bg-slate-900 rounded-2xl">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
+                <p className="text-slate-400 mb-2">{p.desc}</p>
+                <p className="text-green-400 text-sm mb-4">Impact: {p.metrics}</p>
+                <a href={p.link} target="_blank" className="flex items-center gap-2 text-red-500">
+                  <Github className="h-4 w-4" /> View Source
+                </a>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Leadership Highlights */}
+      <section className="bg-slate-950 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-8">Leadership Highlights</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[ 
+              "Led 5-member QA team delivering enterprise releases",
+              "Designed Playwright automation strategy for large-scale projects",
+              "Owned release quality and stakeholder communication",
+              "Mentored junior & mid-level QA engineers",
+              "Integrated automation into CI/CD pipelines",
+              "Drove automation adoption across multiple projects",
+            ].map((item) => (
+              <div key={item} className="bg-slate-900 rounded-2xl p-6">
+                <Star className="text-yellow-400 mb-2" />
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements - Ratings */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6">Awards & Recognition</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-slate-900 rounded-2xl p-6">
+            <h3 className="font-semibold">Extra Mile Award (2024–2025)</h3>
+            <p className="text-slate-400">Outstanding performance on Symplr project</p>
+          </div>
+          <div className="bg-slate-900 rounded-2xl p-6">
+            <h3 className="font-semibold">Customer Appreciation Award (2023–2024)</h3>
+            <p className="text-slate-400">Recognized for dedication and delivery excellence</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Links */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6">Connect</h2>
+        <div className="flex gap-4 flex-wrap">
+          <Button variant="outline" className="rounded-xl" asChild>
+            <a href="https://github.com/yourusername" target="_blank"><Github className="mr-2" /> GitHub</a>
+          </Button>
+          <Button variant="outline" className="rounded-xl" asChild>
+            <a href="https://www.linkedin.com/in/wilson-vineetha-a6a998175/" target="_blank"><Linkedin className="mr-2" /> LinkedIn</a>
+          </Button>
+          <Button className="bg-red-600 hover:bg-red-700 rounded-xl"><Mail className="mr-2" /> Email Me</Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 py-8 text-center text-slate-500">
+          © 2026 Vineetha Wilson | Senior QA Automation Engineer Dubai, UAE
+        </div>
+      </footer>
+    </div>
+  );
+}

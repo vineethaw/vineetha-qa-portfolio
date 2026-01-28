@@ -1,1 +1,0 @@
-# vineetha-qa-portfolio
